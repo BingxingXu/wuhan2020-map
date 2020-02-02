@@ -217,7 +217,7 @@ function App() {
       </div>
       {/* <News province={province} /> */}
       {/* <Summary /> */}
-      <Fallback />
+      {/* <Fallback /> */}
     </div>
   );
 }
