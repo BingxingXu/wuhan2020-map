@@ -199,10 +199,10 @@ function App() {
   const overall = province ? province : all
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#fff' }}>
       {/* <Header province={province} /> */}
       {/* <Stat {...overall} name={province && province.name} modifyTime={all.modifyTime} /> */}
-      <div className="card">
+      <div className="card" style={{ backgroundColor: '#fff' }}>
         {/* <h2>疫情地图 {province ? `· ${province.name}` : false} */}
         {
           province ? <small
