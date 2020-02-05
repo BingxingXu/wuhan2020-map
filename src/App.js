@@ -105,16 +105,6 @@ function Stat({ modifyTime, confirmedCount, suspectedCount, deadCount, curedCoun
   )
 }
 
-function Fallback() {
-  return (
-    <div className="fallback">
-      <div>
-        代码仓库: <a href="https://github.com/shfshanyue/2019-ncov">shfshanyue/2019-ncov</a>
-      </div>
-    </div>
-  )
-}
-
 function Area({ area, onChange }) {
   const renderArea = () => {
     return area.map(x => (
@@ -144,20 +134,6 @@ function Area({ area, onChange }) {
       </div>
       {renderArea()}
     </>
-  )
-}
-
-function Header({ province }) {
-  return (
-    <header>
-      <div className="bg"></div>
-      <h1>
-        <small>新型冠状病毒</small>
-        <br />
-        疫情实时动态 · {province ? province.name : '省市地图'}
-      </h1>
-      <i>By 山月 (数据来源于丁香园)</i>
-    </header>
   )
 }
 
@@ -200,10 +176,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: '#fff' }}>
-      {/* <Header province={province} /> */}
-      {/* <Stat {...overall} name={province && province.name} modifyTime={all.modifyTime} /> */}
       <div className="card" style={{ backgroundColor: '#fff' }}>
-        {/* <h2>疫情地图 {province ? `· ${province.name}` : false} */}
         {
           province ? <small
             onClick={() => setProvince(null)}
@@ -215,9 +188,6 @@ function App() {
         </Suspense>
         <Area area={area} onChange={setProvince} />
       </div>
-      {/* <News province={province} /> */}
-      {/* <Summary /> */}
-      {/* <Fallback /> */}
     </div>
   );
 }

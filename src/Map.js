@@ -97,11 +97,6 @@ function Map({ province, data, onClick }) {
         echarts={echarts}
         option={getOption()}
         lazyUpdate={true}
-      // onEvents={{
-      //   click(e) {
-      //     onClick(e.name)
-      //   }
-      // }}
       />
   )
 }
