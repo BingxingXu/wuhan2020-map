@@ -143,7 +143,6 @@ function App() {
     const p = window.location.pathname.slice(1)
     _setProvince(p ? provincesByPinyin[p] : null)
   }
-
   useEffect(() => {
     setProvinceByUrl()
     window.addEventListener('popstate', setProvinceByUrl)
@@ -156,7 +155,15 @@ function App() {
     if (province) {
       window.document.title = `肺炎疫情实时地图 | ${province.name}`
     }
+    init()
   }, [province])
+
+  const init = (height)=>{
+    let iframeH = Math.max(document.getElementById('test').offsetHeight);
+    let message = iframeH+'px';
+    //向父页面传递参数
+    window.parent.postMessage(message,'*');
+  }
 
   const setProvince = (p) => {
     _setProvince(p)
@@ -175,7 +182,7 @@ function App() {
   const overall = province ? province : all
 
   return (
-    <div style={{ backgroundColor: '#fff' }}>
+    <div style={{ backgroundColor: '#fff' }} id='test'>
       <div className="card" style={{ backgroundColor: '#fff' }}>
         {
           province ? <small
