@@ -159,7 +159,7 @@ function App() {
   }, [province])
 
   const init = (height)=>{
-    let iframeH = Math.max(document.getElementById('test').offsetHeight);
+    let iframeH = Math.max(document.getElementById('test').offsetHeight) || 1500;
     let message = iframeH+'px';
     //向父页面传递参数
     window.parent.postMessage(message,'*');
