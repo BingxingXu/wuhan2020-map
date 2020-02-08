@@ -41,10 +41,12 @@ html {
   display: flex;
   text-align: center;
 }
-
+.province.header {
+  background:rgba(216,216,216,1);
+}
 .province.header > div {
-  background-color: #287FFC;
-  color: #fcfcfc;
+  /*background-color: #287FFC;*/
+  color: #666666;
 }
 
 .area,
@@ -74,7 +76,7 @@ html {
   height: 0;
   border-width: 6px 0 6px 6px;
   border-style: solid;
-  border-color: transparent transparent transparent #287FFC;
+  border-color: transparent transparent transparent #FF878E;
   left: 10px;
   top: 50%;
   transform: translate(0, -50%);
@@ -138,4 +140,17 @@ h2 small {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+.detailshuju {
+  position: relative;
+  padding-left: 1.8rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+}
+.detailshuju-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 1rem;
 }

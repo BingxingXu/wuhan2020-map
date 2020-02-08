@@ -12,6 +12,8 @@ import Tag from './Tag'
 import './App.css'
 import axios from 'axios'
 
+import shuju from './assets/images/shuju.png'
+
 dayjs.extend(relativeTime)
 
 const Map = React.lazy(() => import('./Map'))
@@ -115,7 +117,7 @@ function Area({ area, onChange }) {
         }
       }}>
         <div className={`area ${x.name ? 'active' : ''}`}>
-          {x.name || x.cityName}
+          {x.name || x.cityName}11
         </div>
         <div className="confirmed">{x.confirmedCount}</div>
         <div className="death">{x.deadCount}</div>
@@ -193,6 +195,10 @@ function App() {
         <Suspense fallback={<div className="loading">地图正在加载中...</div>}>
           <Map province={province} data={data} />
         </Suspense>
+        <div className="detailshuju">
+          全国疫情详细数据
+          <img src={shuju} className="detailshuju-icon" />
+        </div>
         <Area area={area} onChange={setProvince} />
       </div>
     </div>
